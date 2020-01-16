@@ -19,9 +19,11 @@ from django.urls import include, path
 import activity.views
 
 urlpatterns = [
-    path('entry/', activity.views.entry),
-    path('detail/', activity.views.detail),
-    path('/', include('activity.urls')),
+    # path('entry/', activity.views.entry),
+    # path('detail/', activity.views.detail),
+        # path('api/accident/', activity.views.getAccidentData, name="getaccidentdata"),
+
+    path('', include('activity.urls')),
     
 
     path('admin/', admin.site.urls),
