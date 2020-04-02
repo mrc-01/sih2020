@@ -3,15 +3,17 @@ from . import utils
 # Create your models here.
 
 class accident(models.Model):
-    uid = models.CharField(max_length=10, primary_key=True)
+    uid = models.CharField(max_length=40, primary_key=True)
     latitude = models.FloatField()
     longitude = models.FloatField()
     speed = models.IntegerField()
     time = models.DateTimeField('Time of accident')
-    vehicleinfo = models.TextField()
-    deviceinfo = models.TextField()
+    vehicleinfo = models.TextField(blank=True, null=True)
+    deviceinfo = models.TextField(blank=True, null=True)
     # speedometer = models.CharField(max_length=10000, default="")
-    
+    pincode = models.CharField(max_length=10 )
+
+
     accelerometerX = models.TextField()
     rotationX = models.TextField()
 
@@ -47,10 +49,10 @@ class accident(models.Model):
 class authority(models.Model):
 
     authority_types = (
-        ("hospital", 'Hospital'),
-        ("police", 'Police Station'),
-        ("fire", 'Fire Station'),
-        ("other", 'Other'),
+        ("hospital", 'hospital'),
+        ("police", 'police'),
+        ("fire", 'fire'),
+        ("other", 'other'),
     )
 
     uid = models.AutoField(primary_key=True)

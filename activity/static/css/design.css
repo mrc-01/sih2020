@@ -1,0 +1,123 @@
+
+body{
+    /*background: linear-gradient(rgba(139, 42, 42, 0.945), rgb(255, 209, 129));*/
+    background: url("./images/bkgd-texture.png"); 
+    background-attachment: fixed; 
+}
+h1{
+    color:white;
+    text-align:center;
+    text-decoration:underline;
+}
+
+h3{
+    color : white;
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+/*    grid-template-columns: repeat(auto-fill, minmax(260px, 2fr));
+    grid-template-rows: auto;
+    grid-gap: 0 60px;
+*/}
+
+#inline1,
+#inline2{
+    outline: 3px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px;
+    outline-offset: -4px;
+    background:white;
+}
+/*#inline1{
+    padding-top:2px;
+}*/
+label,h2{
+    color:black;
+}
+
+input{
+    color: black;
+}
+
+/*.charts{
+ display:flex;
+ width: 100%;
+
+}*/
+/*#chartContainer,
+#chartContainer1{
+    background-color: red;
+    outline: 3px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5px;
+    outline-offset: -4px;
+}*/
+
+.slide-container{
+    /*width: 800px;*/
+    /*height: 600px;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+   /*overflow:hidden;*/
+   /*text-align: center;*/
+}   
+.image-container{
+    /*width:2400px;*/
+    /*height:600px;*/
+    /*position:relative;*/
+    /*transition: left 2s;*/
+    /*-webkit-transition: left 2s;*/
+    /*-moz-transition: left 2s;*/
+    /*-o-transition: left 2s;*/
+}
+.slider-image{
+    /*float:left;*/
+    margin:0px;
+    padding:0px;
+}
+.button-container{
+    top: -20px;
+    position:relative;
+}
+.slider-button{
+    display:inline-block;
+    height:10px;
+    width:10px;
+    border-radius:5px;
+    background-color: black;
+    
+}
+#slider-image-i1:target ~ .image-container{
+    left: -800px;
+}
+#slider-image-i2:target ~ .image-container{
+    left: 0px;
+}
+#slider-image-i3:target ~ .image-container{
+    left: -1600px;
+}
+#im1{
+    color: black;
+    
+}
+#im2{
+    background-color: white;
+    color: black;
+}
+#im3{
+    /*float: right;*/
+    margin: 50px;
+}
+
+#goup{
+    position: fixed;
+    right:5px;
+    bottom: 5px;
+}
+img{
+    width: 100%;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Detail Page</title>
+
+    {% load static %}
+    <link href="{% static "css/design.css" %}" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+      var accX = "{{ accX }}";
+
+var accY = "{{ accY }}";
+
+var accZ = "{{ accZ }}";
+
+var rotX = "{{ rotX }}";
+
+var rotY = "{{ rotY }}";
+
+var rotZ = "{{ rotZ }}";
+
+
+
+
+    </script>
+
+    <script src="{% static "js/canvasjs.min.js"%}"></script>
+    <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+    <script src="{% static "js/input.js" %}"></script>
+
+
+
+
+
+</head>
+
+<body background="{% static "images/bkgd-texture.png" %}">
+    <div>
+        
+        <div class="container">
+          <h3 id="start">Crashed Automobile details</h3>
+        <br>
+            <div class="row">
+              <div id="inline1" class=" well col-lg-6 col-md-6">  
+              <h2>ACCIDENT DETAILS</h2>
+              <label for="i1" title="user ID"> Accident ID: </label>
+              <input type="text" name="name" id="i1" value="{{id}}" disabled="true"><br><br>
+              <label for="i2" title="coordinates">Coordinates: </label>
+              <input type="text" name="name" value="{{lat}},{{long}}" disabled="true">
+              
+              <a href="http://www.google.com/maps/place/{{lat}},{{long}}"><img src="{% static "images/gmapicon.jpeg" %}" style="width: 30px" class="img-responsive"></a> <br> <br>
+
+              <label for="i3" title="time elapsed"> Time of accident: </label>
+              <input name="" id="i3" value="{{time}}" disabled="true"></input>
+              
+              <br>
+              <label for="i4" title="Vehicle spped"> Vehicle speed: </label>
+              <input name="" id="i4" value="{{speed}} kmph" disabled="true"></input>
+          </div>
+            <div id="inline2" class="well col-lg-6 col-md-6">  
+              <h2>AUTOMOBILE DETAILS</h2>
+              <label for="i1" title="user ID"> Model Number: </label><br>
+              <input type="text" name="name" id="i1" disabled="true" value="{{vmodel}}"><br>
+              <label for="i2" title="coordintes">Company's name: </label><br>
+              <input type="text" name="name" id="i2" disabled="true" value="{{vcompany}}"><br>
+              <label for="i3" title="color of automobile"> Automobile Color: </label><br>
+              <input name="" id="i3" disabled="true" value="{{vcolor}}"></input><br>
+              <label for="i4" title="specifications"> Manufactured: </label><br>
+              <input name="" id="i4" disabled="true" value="{{vyear}}"></input><br><br><br>
+          </div>
+            </div>
+        </div>
+        <br><br>
+        <!-- <div class="charts">
+          <div id="chartContainer" style="height: 300px;"></div>
+          <br>
+          <div id="chartContainer1" style="height: 300px;" ></div>
+            </div>
+          </div> -->
+        <div class="container charts">
+            <div class="row">
+                <div class="col-ms-3 col-lg-4" id="chartContainer1" style="height: 270px;  "></div>
+                <div class="col-ms-3 col-lg-4" id="chartContainer2" style="height: 270px;"></div>
+                <div class="col-ms-3 col-lg-4" id="chartContainer3" style="height: 270px;"></div>
+
+            </div>
+            <div class="row">
+                <div class="col-ms-3 col-lg-4" id="chartContainer4" style="height: 270px;  "></div>
+                <div class="col-ms-3 col-lg-4" id="chartContainer5" style="height: 270px;"></div>
+                <div class="col-ms-3 col-lg-4" id="chartContainer6" style="height: 270px;"></div>
+
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="navbar1">
+            
+            <div class="container ">
+                <h3 >Condition At Accident Spot...</h3>
+                <div class=" row ">
+
+                    <div class="col-md-3 col-lg-3">
+                      <img src="{% static "images/i1.jpeg" %}" class="img-responsive img-rounded img-thumbnail">  
+                    </div>
+
+                    <div class="col-md-3 col-lg-3">
+                      <img src="{% static "images/i2.jpeg" %}" class="img-responsive img-rounded img-thumbnail">  
+                    </div>
+
+                    <div class="col-md-3 col-lg-3">
+                      <img src="{% static "images/i3.jpeg" %}" class="img-responsive img-rounded img-thumbnail">  
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+                      <img src="{% static "images/i1.jpeg" %}" class="img-responsive img-rounded img-thumbnail">  
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+                      <img src="{% static "images/i1.jpeg" %}" class="img-responsive img-rounded img-thumbnail">  
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+                      <img src="{% static "images/i1.jpeg" %}" class="img-responsive img-rounded img-thumbnail">  
+                    </div>
+                    
+                </div>
+                <hr>
+                <button type="submit" id="im2">Upload images of Accident</button> <br>
+            </div>
+            <br>
+            
+        </div>
+        <br>
+        
+            
+        
+        <a id="goup" href="#start" >
+            <!-- <p id="im3" ><img src="i4.gif"></p> -->
+        </a>
+        
+</body>
+
+</html>

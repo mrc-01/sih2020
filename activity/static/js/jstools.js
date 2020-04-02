@@ -47,19 +47,27 @@ function createDataPoint(data){
 // }
 
 function fetchData(accident_id){
-  var request = new XMLHttpRequest()
+  var request = new XMLHttpRequest();
+  var value = 0;
+    request.open('GET', '/api/accident/?id='+accident_id, true);
 
-    request.open('GET', '127.0.0.1/api/accident/?id='+accident_id, true)
+
     request.onload = function() {
       // Begin accessing JSON data here
       var data = JSON.parse(this.response)
 
       if (request.status >= 200 && request.status < 400) {
-        console.log(data)
-      } else {
+        //console.log(data[0]['fields']);
+        // return data[0]['fields'];
+        value = data[0]['fields'];
+        //return "000";
+
+      } 
+      else {
         console.log('error')
       }
     }
 
     request.send()
+    return value;
 }
